@@ -1,0 +1,440 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    color: #f2f5f7;
+    font-family: sans-serif;
+    letter-spacing: 1px;
+    font-weight: 300;
+    font-family: 'Roboto', sans-serif;
+}
+
+
+body {
+    font-family: 'Arial', sans-serif; /* Fonte padrão para o corpo do texto */
+    background-color: #f2f5f7; /* Cor de fundo */
+    margin: 0; /* Remove as margens padrão do corpo */
+    padding: 0; /* Remove o preenchimento padrão do corpo */
+    color: #333; /* Cor do texto principal */
+}
+
+
+nav {
+    height: 4.5rem;
+    width: 100%;
+    background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%,
+            rgba(9, 9, 121, 1) 35%,
+            rgba(7, 106, 126) 100%);
+    box-shadow: 0 3px 20px rgba(0, 0, 0, 0.2);
+    display: flex;
+    position: absolute;
+    z-index: 10;
+    box-sizing: border-box;
+}
+
+/*Styling logo*/
+.logo {
+    padding: 1vh 1vw;
+    text-align: center;
+    font-weight: bold;
+}
+
+.logo img {
+    height: 5rem;
+    width: 5rem;
+}
+
+/*Styling Links*/
+.nav-links {
+    display: flex;
+    list-style: none;
+    width: 88vw;
+    padding: 0 0.7vw;
+    justify-content: space-evenly;
+    align-items: center;
+    text-transform: uppercase;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    margin: 0 0.7vw;
+}
+
+.nav-links li a:hover {
+    color: #61DAFB;
+}
+
+.nav-links li {
+    position: relative;
+}
+
+.nav-links li a:hover::before {
+    width: 80%;
+}
+
+/*Styling Buttons*/
+.login-button {
+    background-color: transparent;
+    border: 1.5px solid #f2f5f7;
+    border-radius: 2em;
+    padding: 0.6rem 0.8rem;
+    margin-left: 2vw;
+    font-size: 1rem;
+    cursor: pointer;
+
+}
+
+.login-button:hover {
+    color: #131418;
+    background-color: #f2f5f7;
+    border: 1.5px solid #f2f5f7;
+    transition: all ease-in-out 350ms;
+}
+
+.join-button {
+    color: #131418;
+    background-color: #61DAFB;
+    border: 1.5px solid #61DAFB;
+    border-radius: 2em;
+    padding: 0.6rem 0.8rem;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.join-button:hover {
+    color: #f2f5f7;
+    background-color: transparent;
+    border: 1.5px solid #f2f5f7;
+    transition: all ease-in-out 350ms;
+}
+
+/*Styling Hamburger Icon*/
+.hamburger div {
+    width: 30px;
+    height: 3px;
+    background: #f2f5f7;
+    margin: 5px;
+    transition: all 0.3s ease;
+}
+
+.hamburger {
+    display: none;
+}
+
+/*Stying for small screens*/
+@media screen and (max-width: 800px) {
+    nav {
+        position: fixed;
+        z-index: 3;
+    }
+
+    .hamburger {
+        display: block;
+        position: absolute;
+        cursor: pointer;
+        right: 5%;
+        top: 50%;
+        transform: translate(-5%, -50%);
+        z-index: 2;
+        transition: all 0.7s ease;
+    }
+
+    .nav-links {
+        position: fixed;
+        background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%,
+                rgba(9, 9, 121, 1) 35%,
+                rgba(7, 106, 126) 100%);
+        height: 100vh;
+        width: 100%;
+        flex-direction: column;
+        clip-path: circle(50px at 90% -20%);
+        -webkit-clip-path: circle(50px at 90% -10%);
+        transition: all 1s ease-out;
+        pointer-events: none;
+    }
+
+    .nav-links.open {
+        clip-path: circle(1000px at 90% -10%);
+        -webkit-clip-path: circle(1000px at 90% -10%);
+        pointer-events: all;
+    }
+
+    .nav-links li {
+        opacity: 0;
+    }
+
+    .nav-links li:nth-child(1) {
+        transition: all 0.5s ease 0.2s;
+    }
+
+    .nav-links li:nth-child(2) {
+        transition: all 0.5s ease 0.4s;
+    }
+
+    .nav-links li:nth-child(3) {
+        transition: all 0.5s ease 0.6s;
+    }
+
+    .nav-links li:nth-child(4) {
+        transition: all 0.5s ease 0.7s;
+    }
+
+    .nav-links li:nth-child(5) {
+        transition: all 0.5s ease 0.8s;
+    }
+
+    .nav-links li:nth-child(6) {
+        transition: all 0.5s ease 0.9s;
+        margin: 0;
+    }
+
+    .nav-links li:nth-child(7) {
+        transition: all 0.5s ease 1s;
+        margin: 0;
+    }
+
+    li.fade {
+        opacity: 1;
+    }
+}
+
+/*Animating Hamburger Icon on Click*/
+.toggle .line1 {
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.toggle .line2 {
+    transition: all 0.7s ease;
+    width: 0;
+}
+
+.toggle .line3 {
+    transform: rotate(45deg) translate(-5px, -6px);
+}
+
+
+
+/* Estilos para o elemento <main> */
+main {
+    background-color: rgb(92, 92, 99);
+    padding: 80px 20px 20px;
+    width: 100%;
+    min-height: 80vh;
+}
+
+.centro {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* Centraliza horizontalmente */
+    text-align: center;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+/* Estilos para o conteúdo dentro do <main> */
+.main-content {
+    background-color: rgb(22, 22, 122);
+    padding: 80px 20px 20px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+/* Estilos para o conteúdo dentro do <main> */
+.content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: justify;
+    font-size: 18px;
+    padding: 20px;
+}
+
+h1 {
+    margin-top: 1em;
+    margin-bottom: 20px;
+}
+
+.flex {
+    width: 95%;
+    display: flex;
+    justify-content: center;
+    /* Espaço igual entre os cartões */
+    align-items: center;
+    /* Alinhar verticalmente ao centro */
+    flex-wrap: wrap;
+    /* Quebrar para a próxima linha se o espaço não for suficiente */
+
+}
+
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.card {
+    margin: 10px;
+    width: 400px;
+    height: 200px;
+    position: relative;
+    perspective: 800px;
+}
+
+
+.img {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+}
+
+.front,
+.back {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    backface-visibility: hidden;
+    transition: all 1s;
+    border: 2px solid #61DAFB;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.front {
+    color: #61DAFB;
+    background-image: url(https://photos.google.com/photo/AF1QipNfo3_hbuCbmz3OX39BNh5DZxpZoWU30mUbcMMV);
+    background-size: cover;
+    /* Para cobrir todo o elemento */
+    background-repeat: no-repeat;
+    /* Para não repetir a imagem */
+    background-position: center;
+    /* Para centralizar a imagem */
+}
+
+.back {
+    margin: 5px;
+    background-color: #4591a0;
+    color: #131418;
+    transform: rotateY(-180deg);
+    display: block;
+}
+
+.back h3 {
+    font-size: 20px;
+    margin-top: 10px;
+    /* Mova o título para o topo do cartão */
+    color: #f2f5f7;
+    ;
+}
+
+@keyframes blink {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+
+.back p {
+    margin: 0;
+    padding: 10px;
+    font-size: 16px;
+    text-align: center;
+
+    text-overflow: ellipsis;
+}
+
+.back p::after {
+    content: '|';
+    animation: blink 0.5s infinite;
+}
+
+.card:hover .front {
+    transform: rotatey(180deg);
+}
+
+.card:hover .back {
+    transform: rotateY(0)
+}
+
+@media (max-width: 400px) {
+    .card {
+        width: 300px;
+        height: 150px;
+    }
+    .back {
+        overflow: auto; /* Adicione esta propriedade para ativar barras de rolagem quando o conteúdo transbordar */
+    }
+
+
+
+}
+
+footer {
+    position: relative;
+    width: 100%;
+    background: #61DAFB;
+    min-height: 100px;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+footer .socialicon,
+footer .menu {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0;
+    flex-wrap: wrap;
+}
+
+footer .socialicon li,
+footer .menu li {
+    list-style: none;
+
+}
+
+footer .socialicon li a {
+    font-size: 2em;
+    color: #fff;
+    margin: 0 10px;
+    display: inline-block;
+    transition: 0.5s;
+}
+
+footer .socialicon li a:hover {
+    transform: translateY(-10px);
+}
+
+footer .menu li a {
+    font-size: 1.2em;
+    color: #fff;
+    margin: 0 10px;
+    display: inline-block;
+    text-decoration: none;
+    opacity: 0.75;
+}
+
+footer .menu li a:hover {
+    opacity: 1;
+}
+
+footer p {
+    text-align: center;
+    margin-top: 15px;
+    margin-bottom: 10px;
+    font-size: 1.1em;
+}
